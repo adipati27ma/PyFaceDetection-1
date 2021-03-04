@@ -7,7 +7,8 @@ while True:
   cv2.imshow('Webcamku', frame)
 
   # terminate condition
-  if cv2.waitKey(1) & 0xFF == ord('q'):
+  keyTerminate = cv2.waitKey(1) & 0xFF
+  if keyTerminate == 27 or keyTerminate == ord('q'):
     break
 
 cam.release()
